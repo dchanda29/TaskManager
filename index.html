@@ -22,7 +22,7 @@
     <title>Tasky</title>
 </head>
 
-<body onload="loadInitialData()">
+<body onload="loadInitialCardData()">
     <!-- Modal -->
     <div class=" modal fade " id="exampleModal " tabindex="-1 " aria-labelledby="exampleModalLabel " aria-hidden="true ">
         <div class="modal-dialog ">
@@ -38,21 +38,21 @@
                     </div>
                     <div class="mb-3 ">
                         <label for="tasktitle " class="form-label ">Task Title</label>
-                        <input type="text " class="form-control " id="tasktitle " aria-describedby="Task title " placeholder="eg: API Integration " />
+                        <input type="text " class="form-control " id="tasktitle " aria-describedby="Task title " placeholder="eg: Tech blog " />
                     </div>
                     <div class="mb-3 ">
-                        <label for="tasktype " class="form-label ">Task Type</label>
+                        <label for="tasktype " class="form-label">Task Type</label>
                         <input type="text " class="form-control " id="tasktype " aria-describedby="Task type " placeholder="eg: work " />
                     </div>
                     <div class="mb-3 ">
                         <label for="taskdescription " class="form-label ">Task Description</label
               >
               <textarea
-                rows="6 "
+                rows="7"
                 class="form-control "
                 id="taskdescription "
                 aria-describedby="Task type "
-                placeholder="Describe your task in detail "
+                placeholder="Describe your task in detail."
               ></textarea>
             </div>
           </div>
@@ -70,7 +70,7 @@
               onclick="saveChanges() "
               data-bs-dismiss="modal "
             >
-              Save changes
+              Save Changes
             </button>
           </div>
         </div>
@@ -110,7 +110,7 @@
       </div>
     </nav>
 
-    <div class="container ">
+    <div class="container">
       <div class="row justify-content-center mt-5 ">
         <div class="col-md-6 ">
           <div class="input-group mb-3 shadow ">
@@ -130,40 +130,11 @@
 
       <!-- Cards -->
       <section>
-        <div class="row task_container ">
-          <!-- <div class="col-md-6 col-lg-4 ">
-            <div class="card ">
-              <div class="card-header d-flex justify-content-end gap-2 ">
-                <button type="button " class="btn btn-outline-success ">
-                  <i class="fas fa-pen "></i>
-                </button>
-                <button type="button " class="btn btn-outline-danger ">
-                  <i class="fas fa-trash "></i>
-                </button>
-              </div>
-              <img
-                src="https://images.unsplash.com/photo-1505995433366-e12047f3f144?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=764&q=80 "
-                class="card-img-top "
-                alt="colors "
-              />
-
-              <div class="card-body ">
-                <h5 class="card-title ">Colors Of Life</h5>
-                <p class="card-text ">
-                 Our life is full of colors and we as humans embody most of them. Everything is visible by its color.
-                </p>
-                <a href="# " class="btn btn-primary ">View</a>
-              </div>
-              <div class="card-footer ">
-                <button type="button " class="btn btn-outline-primary float-end ">
-                  Open Task
-                </button>
-              </div>
-            </div>
-          </div> -->
+        <div class="row task_container">
         </div>
       </section>
     </div>
+
 
     <!-- JavaScript Bundle with Popper -->
     <script

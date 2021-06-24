@@ -1,4 +1,4 @@
-const taskContainer = document.querySelector(".task__container");
+const taskContainer = document.querySelector(".task_container");
 
 var globalStore = []; // some values []
 
