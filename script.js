@@ -6,8 +6,8 @@ const generateNewCard = (taskData) => `
 <div class="col-md-6 col-lg-4">
 <div class="card">
   <div class="card-header d-flex justify-content-end gap-2">
-    <button type="button" class="btn btn-outline-success" onload="checkEdits()  value="save my edits" onclick="saveEdits()">
-      <i class="fas fa-pencil-alt"></i>
+    <button type="button" class="btn btn-outline-success" id=${taskData.id} onclick="editCard.apply(this, arguments)" onload="checkEdits()  value="save my edits" onclick="saveEdits()">
+      <i class="fas fa-pencil-alt" id=${taskData.id} onclick="editCard.apply(this, arguments)"></i>
     </button>
     <button type="button" class="btn btn-outline-danger" id=${taskData.id} onclick="deleteCard.apply(this, arguments)">
       <i class="fas fa-trash-alt" id=${taskData.id} onclick="deleteCard.apply(this, arguments)"></i>
@@ -112,4 +112,30 @@ function checkEdits() {
     //find out if the user has previously saved edits
     if (localStorage.userEdits != null)
         document.getElementById("edit").innerHTML = localStorage.userEdits;
+};
+
+const editCard = (event) => {
+    event = window.event;
+
+    const targetID = event.target.id;
+    const tagname = event.target.tagName;
+
+    let parentElement;
+
+    if (tagname === "BUTTON") {
+        parentElement = event.target.parentNode.parentNode;
+    } else {
+        parentElement = event.target.parentNode.parentNode.parentNode;
+    }
+
+    let taskTitle = parentElement.childNodes[5].childNodes[1];
+    let taskDescription = parentElement.childNodes[5].childNodes[3];
+    let taskType = parentElement.childNodes[5].childNodes[5];
+    let submitButton = parentElement.childNodes[7].childNodes[1];
+    //setAttribute
+    taskTitle.setAttribute("contenteditable", "true");
+    taskDescription.setAttribute("contenteditable", "true");
+    taskType.setAttribute("contenteditable", "true");
+    submitButton.innerHTML = "Save Changes";
+
 };
